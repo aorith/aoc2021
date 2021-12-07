@@ -13,8 +13,8 @@ def calcLine(x1, y1, x2, y2):
     # 3,4 -> 5,2
     dx = x2 - x1  # 2
     dy = y2 - y1  # -2
-    sx = int(abs(dx)/dx) if dx != 0 else 0  # or just use 'from utils import sign'
-    sy = int(abs(dy)/dy) if dy != 0 else 0
+    sx = 0 if dx == 0 else (1 if dx > 0 else -1)
+    sy = 0 if dy == 0 else (1 if dy > 0 else -1)
 
     for i in range(max(abs(dx), abs(dy)) + 1):  # 0,1,2
         yield x1 + i * sx, y1 + i * sy  # 3 + 0 * 1, 4 + 0 * -1 == 3,4

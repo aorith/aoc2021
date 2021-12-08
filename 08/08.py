@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-import random
 
 with open(sys.argv[1], "r", encoding="utf-8") as f:
     data = f.readlines()
@@ -44,20 +43,6 @@ BROKEN_DISPLAY = {
     "f": None,
     "g": None,
 }
-
-
-def generate_broken_display():
-    display = {}
-    # values = []
-    # for _ in range(7):
-    #    values.append(random.randint(0, 6))
-    values = [0, 1, 2, 3, 4, 5, 6]
-    random.shuffle(values)
-    letters = ["a", "b", "c", "d", "e", "f", "g"]
-    random.shuffle(letters)
-    for i, c in zip(values, letters):
-        display[c] = i
-    return display
 
 
 def get_corresponding_num_for_segment(segment):
